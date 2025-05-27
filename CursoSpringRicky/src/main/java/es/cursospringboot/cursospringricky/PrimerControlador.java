@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,6 +41,22 @@ public class PrimerControlador {
 		model.addAttribute("mensaje", "Ricardo Martín Ruiz");
 		model.addAttribute("param_valor", valor);
 		return "Hola";
+	}
+	
+
+	@RequestMapping("/{generico}")
+	public String printHelloGet(ModelMap model, 
+			@PathVariable("generico") String accion, 
+			@RequestParam("numero") String param) {
+		
+		System.out.println("printHelloGet entra: "+ accion);
+		
+		if (accion.toUpperCase().equals("GET")){
+			model.addAttribute("message","Action get called with parameter "+param);
+		}else{
+			model.addAttribute("message","Action other called with parameter "+param);
+		}
+		return "hola";//Separado de la vista, se manda el valor pero no se sabe donde se va a mostrar. ME Abstraigo de la tecnologia que hay por debajo
 	}
 
 
