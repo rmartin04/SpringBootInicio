@@ -27,6 +27,6 @@ public class ControladorCalculadora {
 
 		model.addAttribute("resultado", resultado);
 
-		return "resultado"; // Retorna la vista "resultado.html"
+		return "calculadora"; // Retorna la vista "resultado.html"
 	}
 }
