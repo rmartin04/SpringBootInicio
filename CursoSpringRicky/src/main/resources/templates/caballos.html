@@ -77,7 +77,7 @@
     <h1>Información del caballo</h1>
     <h2>Formulario</h2>
     <p style="text-align:center;">Por favor, introduzca los datos del caballo:</p>
-    <form th:action="@{/procesar}" th:object="${caballo}" method="post">
+    <form th:action="@{/introducir}" th:object="${caballo}" method="post">
         <label>Nombre:</label>
         <input type="text" th:field="*{nombre}" />
 

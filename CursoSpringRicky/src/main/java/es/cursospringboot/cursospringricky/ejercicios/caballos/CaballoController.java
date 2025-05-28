@@ -15,7 +15,7 @@ public class CaballoController {
 	private Caballo caballoObjeto;
 	
     @GetMapping("/caballos")
-    public String mostrarUsuario(Model model) {
+    public String mostrarCaballo(Model model) {
        
         model.addAttribute("caballo", caballoObjeto);
         
@@ -24,7 +24,7 @@ public class CaballoController {
     
  // Procesar el formulario (POST)
     
-    @PostMapping("/procesar")
+    @PostMapping("/introducir")
     public String procesarFormulario(@ModelAttribute Caballo caballo, Model model) {
     	
         // Aquí ya tienes los datos del formulario en el objeto "usuario"
