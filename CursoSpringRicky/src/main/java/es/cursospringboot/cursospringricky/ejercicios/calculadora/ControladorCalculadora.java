@@ -1,4 +1,4 @@
-package es.cursospringboot.cursospringricky;
+package es.cursospringboot.cursospringricky.ejercicios.calculadora;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

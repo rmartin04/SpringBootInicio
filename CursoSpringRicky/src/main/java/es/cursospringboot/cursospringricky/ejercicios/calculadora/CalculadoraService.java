@@ -1,4 +1,4 @@
-package es.cursospringboot.cursospringricky;
+package es.cursospringboot.cursospringricky.ejercicios.calculadora;
 
 import org.springframework.stereotype.Service;
 
