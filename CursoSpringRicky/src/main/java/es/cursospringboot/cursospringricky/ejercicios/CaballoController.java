@@ -28,7 +28,7 @@ public class CaballoController {
         // Aquí ya tienes los datos del formulario en el objeto "usuario"
         model.addAttribute("caballoProcesado", caballo);
         
-        return "resultado";
+        return "introducidos";
     }
 
 }
