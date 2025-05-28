@@ -2,13 +2,30 @@ package es.cursospringboot.cursospringricky.ejercicios.caballos;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
 @Component
+@Table(name = "TB_CABALLO")
 public class Caballo {
 	
+	@Id
+	@GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+	@Column(name = "ID_CABALLO")
+	private int id;
+	@Column(name = "NOMBRE", length = 50, nullable = false)
 	private String nombre;
+	@Column(name = "EDAD", nullable = false)
 	private int edad;
+	@Column(name = "VELOCIDAD_MAXIMA", nullable = false)
 	private double velocidadMaxima;
+	@Column(name = "NUMERO_TRIUNFOS", nullable = false)
 	private int numeroTriunfos;
+	@Column(name = "EXPERIENCIA", nullable = false)
 	private double experiencia;
 	
 	public Caballo() {

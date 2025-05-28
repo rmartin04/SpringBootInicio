@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html>
 <head>
-    <title>Introducidos</title>
+<meta charset="UTF-8">
+<title>Consulta de caballos</title>
 </head>
 <body>
-    <h1>Datos recibidos</h1>
-    <p>Nombre: <span th:text="${caballoProcesado.nombre}"></span></p>
-    <p>Edad: <span th:text="${caballoProcesado.edad}"></span></p>
-    <p>Velocidad Maxima: <span th:text="${caballoProcesado.velocidadMaxima}"></span></p>
-    <p>Numero de triunfos: <span th:text="${caballoProcesado.numeroTriunfos}"></span></p>
-    <p>Experiencia: <span th:text="${caballoProcesado.experiencia}"></span></p>
-</body>
-</html>
+	<h2>Consulta los caballos introducidos</h2>
+
+	<table border="6">
+		<tr>
+		    <th>Id</th>
+			<th>Nombre</th>
+			<th>Edad</th>
+			<th>Velocidad Maxima</th>
+			<th>Numero de triunfos</th>
+			<th>Experiencia</th>
+		</tr>
+		<tr>
+		     <td th:text="${caballoProcesado.nombre}"></td>
+		     <td th:text="${caballoProcesado.edad}"></td>
+			 <td th:text="${caballoProcesado.velocidadMaxima}"></td>
+			 <td th:text="${caballoProcesado.numeroTriunfos}"></td>
+			 <td th:text="${caballoProcesado.experiencia}"></td>
+		</tr>
