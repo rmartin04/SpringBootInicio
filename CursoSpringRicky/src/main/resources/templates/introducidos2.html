@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f4ff;
+            padding: 2rem;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056ff;
+        }
+
+        table {
+            margin: 2rem auto;
+            border-collapse: collapse;
+            width: 60%;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #00b0ff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7faff;
+        }
+
+        tr:hover {
+            background-color: #e0f7ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Datos del Caballo</h1>
+    <table>
+        <tr>
+            <th>Campo</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td th:text="${caballoProcesado.nombre}"></td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td th:text="${caballoProcesado.edad}"></td>
+        </tr>
+        <tr>
+            <td>Velocidad Máxima</td>
+            <td th:text="${caballoProcesado.velocidadMaxima}"></td>
+        </tr>
+        <tr>
+            <td>Número de Triunfos</td>
+            <td th:text="${caballoProcesado.numeroTriunfos}"></td>
+        </tr>
+        <tr>
+            <td>Experiencia</td>
+            <td th:text="${caballoProcesado.experiencia}"></td>
+        </tr>
+    </table>
+</body>
+</html>

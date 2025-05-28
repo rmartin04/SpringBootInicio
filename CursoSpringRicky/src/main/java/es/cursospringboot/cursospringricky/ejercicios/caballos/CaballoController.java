@@ -23,12 +23,15 @@ public class CaballoController {
     }
     
  // Procesar el formulario (POST)
+    
     @PostMapping("/procesar")
     public String procesarFormulario(@ModelAttribute Caballo caballo, Model model) {
+    	
         // Aquí ya tienes los datos del formulario en el objeto "usuario"
+    	
         model.addAttribute("caballoProcesado", caballo);
         
-        return "introducidos";
+        return "introducidos2";
     }
 
 }
