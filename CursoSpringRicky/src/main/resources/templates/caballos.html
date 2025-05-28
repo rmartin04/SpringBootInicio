@@ -7,7 +7,7 @@
     <h1>Información del caballo</h1>
     <body>
     <h1>Formulario</h1>
-    <form th:action="@{/procesar}" th:object="${usuario}" method="post">
+    <form th:action="@{/procesar}" th:object="${caballo}" method="post">
         <label>Nombre:</label>
         <input type="text" th:field="*{nombre}" /><br/>
         

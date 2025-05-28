@@ -1,4 +1,4 @@
-package es.cursospringboot.cursospringricky.ejercicios.caballos;
+package es.cursospringboot.cursospringricky.ejercicios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class CaballoController {
     @GetMapping("/caballos")
     public String mostrarUsuario(Model model) {
        
-        model.addAttribute("caballos", caballoObjeto);
+        model.addAttribute("caballo", caballoObjeto);
         
         return "caballos";
     }

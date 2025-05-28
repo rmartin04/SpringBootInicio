@@ -1,4 +1,4 @@
-package es.cursospringboot.cursospringricky.ejercicios.caballos;
+package es.cursospringboot.cursospringricky.ejercicios;
 
 import org.springframework.stereotype.Component;
 
