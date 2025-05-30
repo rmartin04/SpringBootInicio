@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -14,7 +15,7 @@ import jakarta.persistence.Table;
 public class Caballo {
 	
 	@Id
-	@GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	@Column(name = "ID_CABALLO")
 	private int id;
 	@Column(name = "NOMBRE", length = 50, nullable = false)
@@ -38,6 +39,15 @@ public class Caballo {
 		this.velocidadMaxima = velocidadMaxima;
 		this.numeroTriunfos = numeroTriunfos;
 		this.experiencia = experiencia;
+	}
+	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {

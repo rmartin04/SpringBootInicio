@@ -1,100 +1,99 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Información del Caballo</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #dfe9f3, #f0f4ff);
-            color: #333;
-            margin: 0;
-            padding: 2rem;
-        }
+<meta charset="UTF-8">
+<title>Información del Caballo</title>
+<style>
+body {
+	font-family: 'Segoe UI', sans-serif;
+	background: linear-gradient(135deg, #dfe9f3, #f0f4ff);
+	color: #333;
+	margin: 0;
+	padding: 2rem;
+}
 
-        h1, h2 {
-            text-align: center;
-            color: #0056ff;
-        }
+h1, h2 {
+	text-align: center;
+	color: #0056ff;
+}
 
-        form {
-            max-width: 500px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: #ffffffdd;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
+form {
+	max-width: 500px;
+	margin: 2rem auto;
+	padding: 2rem;
+	background-color: #ffffffdd;
+	border-radius: 16px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
 
-        label {
-            display: block;
-            margin-top: 1rem;
-            font-weight: bold;
-            color: #444;
-        }
+label {
+	display: block;
+	margin-top: 1rem;
+	font-weight: bold;
+	color: #444;
+}
 
-        input {
-            width: 100%;
-            padding: 0.7rem;
-            margin-top: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            transition: border 0.3s ease;
-        }
+input {
+	width: 100%;
+	padding: 0.7rem;
+	margin-top: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	transition: border 0.3s ease;
+}
 
-        input:focus {
-            border-color: #00b0ff;
-            outline: none;
-        }
+input:focus {
+	border-color: #00b0ff;
+	outline: none;
+}
 
-        button {
-            padding: 0.8rem 1.5rem;
-            margin: 1rem 0.5rem 0 0;
-            border: none;
-            border-radius: 8px;
-            background-color: #00b0ff;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+button {
+	padding: 0.8rem 1.5rem;
+	margin: 1rem 0.5rem 0 0;
+	border: none;
+	border-radius: 8px;
+	background-color: #00b0ff;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
 
-        button[type="reset"] {
-            background-color: #ffc0cb;
-            color: #333;
-        }
+button[type="reset"] {
+	background-color: #ffc0cb;
+	color: #333;
+}
 
-        button:hover {
-            background-color: #008cdd;
-        }
+button:hover {
+	background-color: #008cdd;
+}
 
-        button[type="reset"]:hover {
-            background-color: #ff9aae;
-        }
-    </style>
+button[type="reset"]:hover {
+	background-color: #ff9aae;
+}
+</style>
 </head>
 <body>
-    <h1>Información del caballo</h1>
-    <h2>Formulario</h2>
-    <p style="text-align:center;">Por favor, introduzca los datos del caballo:</p>
-    <form th:action="@{/introducir}" th:object="${caballo}" method="post">
-        <label>Nombre:</label>
-        <input type="text" th:field="*{nombre}" />
+	<h1>Información del caballo</h1>
+	<h2>Formulario</h2>
+	<p style="text-align: center;">Por favor, introduzca los datos del
+		caballo:</p>
+	<form th:action="@{/introducir}" th:object="${caballo}" method="post">
+		<label>Nombre:</label> <input type="text" th:field="*{nombre}" /> <label>Edad:</label>
+		<input type="number" th:field="*{edad}" /> <label>Velocidad
+			Máxima:</label> <input type="number" th:field="*{velocidadMaxima}" /> <label>Número
+			de Triunfos:</label> <input type="number" th:field="*{numeroTriunfos}" /> <label>Experiencia:</label>
+		<input type="number" th:field="*{experiencia}" />
 
-        <label>Edad:</label>
-        <input type="number" th:field="*{edad}" />
+		<button type="submit">Enviar</button>
+		<button type="reset">Resetear</button>
+		<a href="vercaballos" style="text-decoration: none;">
+			<button type="button">Ver Caballos Introducidos</button>
+		</a>
+	</form>
 
-        <label>Velocidad Máxima:</label>
-        <input type="number" th:field="*{velocidadMaxima}" />
 
-        <label>Número de Triunfos:</label>
-        <input type="number" th:field="*{numeroTriunfos}" />
 
-        <label>Experiencia:</label>
-        <input type="number" th:field="*{experiencia}" />
 
-        <button type="submit">Enviar</button>
-        <button type="reset">Resetear</button>
-    </form>
 </body>
 </html>

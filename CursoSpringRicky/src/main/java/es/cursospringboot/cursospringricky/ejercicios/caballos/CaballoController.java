@@ -33,13 +33,31 @@ public class CaballoController {
     public String procesarFormulario(@ModelAttribute Caballo caballo, Model model) {
     	
     	caballoRep.save(caballo); // Guardamos el caballo en la base de datos
-    	caballoRep.findAll(); // Recuperamos todos los caballos de la base de datos (opcional)
+    	model.addAttribute("caballos", caballoRep.findAll()); // Pasa la lista completa
     	
         // Aquí ya tienes los datos del formulario en el objeto "usuario"
     	
-        model.addAttribute("caballoProcesado", caballo);
+       // model.addAttribute("caballoProcesado", caballo);
         
+        
+        return "caballos";
+    }
+    
+    @GetMapping("/vercaballos")
+    public String verCaballosIntroducidos(Model model) {
+    	System.out.println("Mostrando caballos introducidos");
+        model.addAttribute("caballos", caballoRep.findAll());
         return "introducidos";
     }
+    
+    @GetMapping("/buscarnombre")
+	public String buscarPorNombre(Model model, String nombre) {
+		System.out.println("Buscando caballo por nombre: " + nombre);
+
+	
+		model.addAttribute("caballos", caballoRep.findByNombreStartsWithIgnoreCase(nombre));
+
+		return "caballosnombre";
+	}
 
 }

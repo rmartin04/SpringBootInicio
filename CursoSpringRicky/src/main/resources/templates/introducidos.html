@@ -1,26 +1,142 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-<html>
+
+
 <head>
-<meta charset="UTF-8">
-<title>Consulta de caballos</title>
+    <meta charset="UTF-8">
+    <title>Consulta de caballos</title>
+    <style>
+        body {
+            background-color: #fdf6f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007BFF; /* Azul eléctrico */
+            margin-bottom: 30px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 90%;
+            max-width: 1000px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e3f2fd; /* azul pastel claro */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fefefe; /* blanco suave */
+        }
+
+        tr:hover {
+            background-color: #d0ebff;
+        }
+        
+form {
+	max-width: 500px;
+	margin: 2rem auto;
+	padding: 2rem;
+	background-color: #ffffffdd;
+	border-radius: 16px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+label {
+	display: block;
+	margin-top: 1rem;
+	font-weight: bold;
+	color: #444;
+}
+
+input {
+	width: 100%;
+	padding: 0.7rem;
+	margin-top: 0.5rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	transition: border 0.3s ease;
+}
+
+input:focus {
+	border-color: #00b0ff;
+	outline: none;
+}
+
+button {
+	padding: 0.8rem 1.5rem;
+	margin: 1rem 0.5rem 0 0;
+	border: none;
+	border-radius: 8px;
+	background-color: #00b0ff;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button[type="reset"] {
+	background-color: #ffc0cb;
+	color: #333;
+}
+
+button:hover {
+	background-color: #008cdd;
+}
+
+button[type="reset"]:hover {
+	background-color: #ff9aae;
+}
+    </style>
 </head>
 <body>
-	<h2>Consulta los caballos introducidos</h2>
+	<h2>Consulta los caballos introducidos</h2><br>
+	
+	<form th:action="@{/buscarnombre}" method="get">
+	    <label for="nombre">Buscar por nombre:</label>
+	    <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Buscar</button>
+                    </form>
+        
 
 	<table border="6">
 		<tr>
-		    <th>Id</th>
+			<th>Id</th>
 			<th>Nombre</th>
 			<th>Edad</th>
 			<th>Velocidad Maxima</th>
 			<th>Numero de triunfos</th>
 			<th>Experiencia</th>
 		</tr>
-		<tr>
-		     <td th:text="${caballoProcesado.nombre}"></td>
-		     <td th:text="${caballoProcesado.edad}"></td>
-			 <td th:text="${caballoProcesado.velocidadMaxima}"></td>
-			 <td th:text="${caballoProcesado.numeroTriunfos}"></td>
-			 <td th:text="${caballoProcesado.experiencia}"></td>
-		</tr>
+		     <tr th:each="caballo : ${caballos}">
+            <td th:text="${caballo.id}"></td>
+            <td th:text="${caballo.nombre}"></td>
+            <td th:text="${caballo.edad}"></td>
+            <td th:text="${caballo.velocidadMaxima}"></td>
+            <td th:text="${caballo.numeroTriunfos}"></td>
+            <td th:text="${caballo.experiencia}"></td>
+        </tr>
+	</table>
+	
+</body>
+</html>
