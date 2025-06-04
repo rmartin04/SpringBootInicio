@@ -1,7 +1,8 @@
 package es.cursospringboot.cursospringricky.rest;
 
-import java.util.ArrayList;
+
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ import es.cursospringboot.cursospringricky.beans.Alumno;
 @RequestMapping("/alumnos")
 public class AlumnoRestController {
 	
-	private List<Alumno> lista = new ArrayList<>();
+	private List<Alumno> lista = new CopyOnWriteArrayList<Alumno>();
 	
 	@GetMapping
     public List<Alumno> obtenerAlumnos() {
